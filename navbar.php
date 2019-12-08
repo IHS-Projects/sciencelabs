@@ -34,6 +34,7 @@ if ($lab == 'b') {
 ?>
 
 <script src="../js/popper.min.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
 
 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-<?php echo $lab;?>">
 

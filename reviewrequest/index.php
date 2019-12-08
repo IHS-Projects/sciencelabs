@@ -4,8 +4,9 @@
 
 <head>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" href="checkbox.css">
-    <script src="../js/bootstrap.min.js"></script>
+	<script src="../js/jquery-3.4.1.min.js"></script>
+	<script src="../js/popper.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
 </head>
 
 <script>
