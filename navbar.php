@@ -91,6 +91,12 @@ if ($lab == 'b') {
 						<a class="nav-link" href="../reviewrequest/">Review Orders</a>';
 			}
 			?>
+			<?php
+			if ($_SESSION['level'] != 2) {
+				echo '<li class="nav-item">
+						<a class="nav-link" href="../checkout/reviewcheckout.php">Review Checkouts</a>';
+			}
+			?>
 
 			<li class="nav-item">
 				<a class="nav-link" href="../user/changepass.php">Change Password</a>
