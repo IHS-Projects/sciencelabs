@@ -34,7 +34,7 @@ if ($lab == 'b') {
 ?>
 
 <script src="../js/popper.min.js"></script>
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/font-awesome.min.css">
 
 <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-<?php echo $lab;?>">
 
@@ -72,31 +72,22 @@ if ($lab == 'b') {
     
 	<div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
 		<ul class="navbar-nav ml-auto">
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<?php echo $level . $uname; ?>
-				</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="#">Action</a>
-				<a class="dropdown-item" href="#">Another action</a>
-				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="#">Something else here</a>
+			<li class="nav-item dropdown ml-auto">
+				<span class="navbar-text text-white">
+					<?php echo $level . $uname; ?> 
+				</span>
+				<a class="nav-link dropdown-toggle navbar-text text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-gear fa-spin" style="font-size:20px"></i> </a>
+				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="../user/changepass.php">Change Password</a>
+					<?php
+						if ($_SESSION['level'] != 2) {
+							echo '<a class="dropdown-item" href="../reviewrequest/">Review Orders</a>';
+						}
+					?>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="../">Logout</a>
 				</div>
 			</li>
-			<span class="navbar-text text-white">
-				<?php echo $level . $uname; ?>
-			</span>
-			<?php
-			if ($_SESSION['level'] != 2) {
-				echo '<li class="nav-item">
-						<a class="nav-link" href="../reviewrequest/">Review Orders</a>';
-			}
-			?>
-
-			<li class="nav-item">
-				<a class="nav-link" href="../user/changepass.php">Change Password</a>
-			<li class="nav-item dropdown">
-				<a class="nav-link" href="../">Logout</a>
 		</ul>
 	</div>
 </nav>
