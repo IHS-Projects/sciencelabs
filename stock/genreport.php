@@ -51,4 +51,5 @@ foreach (range('A', 'E') as $col) {
 }
 
 $writer = new Xlsx($spreadsheet);
-$writer->save("../excel/" . $_SESSION['labname'] . " StockAlert " . date("Y m d") . '.xlsx');
+$writer->save("../excel/" . $_SESSION['labname'] . " Stock Alert " . date("Y m d") . '.xlsx');
+echo '<script>window.location.href="/sciencelabs/requests/getexcel.php";</script>';

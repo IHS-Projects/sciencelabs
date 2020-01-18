@@ -51,7 +51,12 @@ require_once '../checksession.php';
 
 <body>
 
-	<?php include '../navbar.php'; ?>
+	<?php
+		include '../navbar.php';
+		$sql = "select item_name, specs, min_quantity, quantity, price from item where min_quantity>quantity and lab='" . $_SESSION['lab'] . "';";
+		$alert = $conn->query($sql)->num_rows;
+		$alert = ($alert == 0) ? 'd-none':'';
+	?>
 	<script>
 		setActive('Stock');
 	</script>
@@ -87,7 +92,7 @@ require_once '../checksession.php';
 	<br>
 
 	<div class="container">
-		<div class="alert alert-danger text-center">
+		<div class="alert alert-danger text-center <?php echo $alert;?>">
 			<strong>Warning!</strong> Item(s) are lower than their required stock(s).
 			<button class="btn btn-danger btn-sm mx-0" onclick="document.location.href='genreport.php';">Generate Report</button>
 		</div>
