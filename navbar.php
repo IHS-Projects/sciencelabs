@@ -59,19 +59,19 @@ if ($lab == 'b') {
 	<div class="collapse navbar-collapse" id="navbarSupportedContent">
 		<li class="nav-item navbar-brand dropdown">
 			<div class="dropdown">
-				<button id="lab_dropdown" class="btn btn-dark navbar-brand dropdown-toggle" style="background:rgba(41, 43, 44, 0.5);border:none;" type="button" data-toggle=""><?php echo $img . ' ' . $_SESSION['labname']; ?>Lab
+				<button class="btn btn-dark navbar-brand dropdown-toggle" style="background:rgba(41, 43, 44, 0.5);border:none;" href="#" id="labDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $img . ' ' . $_SESSION['labname']; ?>Lab
 					<span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" onclick="document.location.href='../changelab.php?labname=p';">
+				<div class="dropdown-menu" aria-labelledby="labDropdown">
+					<a class="dropdown-item" onclick="document.location.href='../changelab.php?labname=p';">
 							<img src="../img/atom.svg" width="30" height="30"> Physics Lab
-						</a></li>
-					<li><a class="dropdown-item" onclick="document.location.href='../changelab.php?labname=c';">
+						</a>
+					<a class="dropdown-item" onclick="document.location.href='../changelab.php?labname=c';">
 							<img src="../img/flask.svg" width="30" height="30"> Chemistry Lab
-						</a></li>
-					<li><a class="dropdown-item" onclick="document.location.href='../changelab.php?labname=b';">
+						</a>
+					<a class="dropdown-item" onclick="document.location.href='../changelab.php?labname=b';">
 							<img src="../img/cells.svg" width="30" height="30"> Biology Lab
-						</a></li>
-				</ul>
+						</a>
+				</div>
 			</div>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
 				<span class="navbar-toggler-icon"></span>
